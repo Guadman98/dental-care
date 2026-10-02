@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Paleta tomada de la referencia y ajustada al logo de DentalCare. */
+@theme {
+  --color-marino: #0b2545;
+  --color-marino-900: #071a33;
+  --color-azul: #1456c6;
+  --color-azul-700: #0e449f;
+  --color-aqua: #16b8cc;
+  --color-hielo: #eef5fb;
+  --color-hielo-200: #d9e8f6;
+  --color-arena: #f7f2ea;
+  --color-texto: #3f4b5c;
+
+  --font-serif: var(--font-titulos), Georgia, serif;
+  --font-sans: var(--font-cuerpo), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+/* En una capa para que las utilidades de Tailwind (text-white, font-sans…) puedan sobrescribirlo. */
+@layer base {
+  body {
+    background: #ffffff;
+    color: var(--color-texto);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--color-marino);
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-aqua);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
